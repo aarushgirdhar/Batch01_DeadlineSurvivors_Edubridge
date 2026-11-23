@@ -1,45 +1,68 @@
 # EduBridge Learning System
 
-##  Project Overview
+## 1. Project Title
 
-**EduBridge Learning System** is a console-based application developed using the **C programming language**.
-
-The system is designed to manage basic student information, record academic marks, conduct subject-wise quizzes, analyse student performance, and provide suggestions for improvement.
-
-The project demonstrates important C programming concepts such as:
-
-- Structures
-- Arrays
-- Functions
-- Loops
-- Conditional statements
-- Switch statements
-- String handling
-- File handling
-- Input validation
-- Multidimensional arrays
+**EduBridge Learning System – Student Performance Analysis and Quiz System**
 
 ---
 
-##  Objectives
+## 2. Problem Statement
 
-The main objectives of this project are:
+Students need an easy and systematic way to record academic performance, test their understanding of different subjects, and identify areas where improvement is required.
 
-- Register student information.
-- Display available subjects.
-- Store marks for different subjects.
-- Conduct quizzes for all subjects.
-- Calculate quiz scores.
-- Analyse academic performance.
-- Identify weak and strong subjects.
-- Provide suggestions for improvement.
-- Store student and result information using files.
+The **EduBridge Learning System** is a console-based application developed using the **C programming language**. It allows students to register, view subjects, enter marks, attempt subject-wise quizzes, analyse their academic performance, identify weak and strong areas, and view saved results.
+
+The project demonstrates the practical implementation of fundamental C programming concepts including structures, arrays, functions, loops, conditional statements, switch statements, multidimensional arrays, string handling, input validation, and file handling.
 
 ---
 
-##  Subjects Included
+## 3. Team Details
 
-The system contains five subjects:
+**Team Number:** 8  
+**Batch:** 1
+
+| S. No. | Team Member |
+|---|---|
+| 1 | **Aarush Girdhar** |
+| 2 | **Lakshay Rathi** |
+| 3 | **Ishika Malik** |
+
+---
+
+## 4. Objectives
+
+The objectives of the project are:
+
+1. To develop a menu-driven learning system using C.
+2. To register and store student information.
+3. To record marks for five academic subjects.
+4. To conduct subject-wise multiple-choice quizzes.
+5. To calculate subject-wise and overall quiz scores.
+6. To calculate the student's overall academic percentage.
+7. To classify performance as Weak, Average, or Strong.
+8. To identify subjects requiring improvement.
+9. To provide subject-specific improvement suggestions.
+10. To identify strong academic areas.
+11. To store student details and results using file handling.
+12. To provide safe input validation.
+
+---
+
+# 5. Features of the Program
+
+### Student Registration
+
+The program accepts the student's:
+
+- Student ID
+- Student Name
+- Course
+
+Registration information is stored in `students.txt`.
+
+### View Subjects
+
+Five subjects are available:
 
 1. C Programming
 2. Maths
@@ -47,362 +70,261 @@ The system contains five subjects:
 4. Problem Solving
 5. EVS
 
----
+### Enter Subject Marks
 
-##  Features
+Marks between **0 and 100** can be entered for each subject. Invalid values are rejected.
 
-### 1. Student Registration
+### Subject Quiz
 
-The user can enter:
+Each of the five subjects contains **5 multiple-choice questions**.
 
-- Student ID
-- Student Name
-- Course
+**Total Questions = 5 × 5 = 25**
 
-The registration details are stored in:
+The program calculates:
 
-`students.txt`
-
----
-
-### 2. View Subjects
-
-Displays all five subjects available in the learning system.
-
----
-
-### 3. Enter Subject Marks
-
-The student can enter marks out of **100** for each subject.
-
-The program validates the marks so that only values between **0 and 100** are accepted.
-
-Marks are stored in:
-
-`results.txt`
-
----
-
-### 4. Subject Quiz System
-
-The system conducts a quiz for all five subjects.
-
-Each subject contains:
-
-- 5 questions
-- 4 options per question
-- 1 correct answer
-
-Therefore, the complete quiz contains:
-
-**5 Subjects × 5 Questions = 25 Questions**
-
-Each correct answer gives **1 point**.
-
-Maximum score:
-
-**25/25**
-
-The system displays:
-
-- Subject-wise quiz scores
-- Total quiz score
+- Subject-wise score
+- Total score out of 25
 - Overall quiz percentage
 
----
-
-##  Performance Analysis
-
-The program analyses the marks obtained in each subject.
-
-### Performance Classification
+### Performance Analysis
 
 | Marks | Performance |
-|------:|-------------|
+|---:|---|
 | Below 40 | Weak |
 | 40–59 | Average |
 | 60–100 | Strong |
 
-The system also displays:
+The program also identifies areas needing improvement and strong areas.
 
-- Overall percentage
-- Overall quiz score
-- Number of weak subjects
-- Number of average subjects
-- Number of strong subjects
+### File Handling
 
----
+Two files are used:
 
-##  Areas Needing Improvement
-
-A subject is identified as needing improvement when:
-
-- Subject marks are below **40**, or
-- Quiz score is **2/5 or lower**
-
-The program provides subject-specific recommendations.
-
-### C Programming
-
-- Revise variables, loops, arrays and functions.
-- Practise additional questions.
-
-### Maths
-
-- Practise formulas, algebra and numerical problems.
-
-### Physics
-
-- Revise concepts, units and numerical problems.
-
-### Problem Solving
-
-- Practise algorithms, flowcharts and logical reasoning.
-
-### EVS
-
-- Revise ecosystems, biodiversity, pollution and sustainability.
+- `students.txt` – stores registration information.
+- `results.txt` – stores marks and quiz results.
 
 ---
 
-##  Strong Areas
+# 6. Algorithm
 
-A subject is considered a strong area when:
-
-- Marks are **60 or above**, and
-- Quiz score is **3/5 or above**
-
-For strong subjects, the system recommends:
-
-- Maintaining consistent performance.
-- Practising advanced questions.
-- Applying knowledge to practical examples.
+1. Start the program.
+2. Initialize student data, marks, quiz scores, and status variables.
+3. Display the main menu.
+4. Accept and validate the user's choice.
+5. If choice is **1**, register the student.
+6. If choice is **2**, display the subjects.
+7. If choice is **3**, check registration and enter subject marks.
+8. If choice is **4**, check registration and marks, then conduct all quizzes.
+9. If choice is **5**, check marks and quiz completion, then analyse performance.
+10. If choice is **6**, read and display saved results.
+11. If choice is **7**, display the exit message.
+12. Return to the main menu while the choice is not 7.
+13. End.
 
 ---
 
-##  File Handling
-
-The project uses two text files.
-
-### `students.txt`
-
-Stores student registration information.
-
-Example:
+# 7. Pseudocode
 
 ```text
-101 | Aarush | B.Tech
+BEGIN
+
+SET registered = 0
+SET marksEntered = 0
+SET quizTaken = 0
+INITIALIZE student data and quiz scores
+
+REPEAT
+
+    DISPLAY Main Menu
+    INPUT choice
+
+    SWITCH choice
+
+        CASE 1:
+            INPUT Student ID
+            INPUT Student Name
+            INPUT Course
+            SET registered = 1
+            RESET marks and quiz scores
+            SAVE details to students.txt
+
+        CASE 2:
+            DISPLAY all five subjects
+
+        CASE 3:
+            IF registered = 0
+                DISPLAY "Please register first!"
+            ELSE
+                FOR each subject
+                    INPUT marks from 0 to 100
+                END FOR
+                SET marksEntered = 1
+                SAVE marks to results.txt
+            END IF
+
+        CASE 4:
+            IF registered = 0
+                DISPLAY "Please register first!"
+            ELSE IF marksEntered = 0
+                DISPLAY "Please enter subject marks first!"
+            ELSE
+                FOR each subject
+                    SET score = 0
+
+                    FOR each question
+                        DISPLAY question and options
+                        INPUT answer
+
+                        IF answer is correct
+                            score = score + 1
+                        END IF
+                    END FOR
+
+                    STORE subject score
+                END FOR
+
+                CALCULATE total quiz score
+                CALCULATE quiz percentage
+                SET quizTaken = 1
+                SAVE quiz results
+            END IF
+
+        CASE 5:
+            IF marksEntered = 0
+                DISPLAY "Please enter marks first!"
+            ELSE IF quizTaken = 0
+                DISPLAY "Please complete all quizzes first!"
+            ELSE
+                FOR each subject
+
+                    IF marks < 40
+                        CLASSIFY as Weak
+                    ELSE IF marks < 60
+                        CLASSIFY as Average
+                    ELSE
+                        CLASSIFY as Strong
+                    END IF
+
+                    IF marks < 40 OR quiz score <= 2
+                        DISPLAY improvement suggestions
+                    END IF
+
+                    IF marks >= 60 AND quiz score >= 3
+                        DISPLAY strong-area suggestions
+                    END IF
+
+                END FOR
+
+                CALCULATE overall percentage
+                DISPLAY performance summary
+            END IF
+
+        CASE 6:
+            OPEN results.txt
+
+            IF file exists
+                DISPLAY saved results
+            ELSE
+                DISPLAY "No saved results available!"
+            END IF
+
+        CASE 7:
+            DISPLAY "Thank you for using EduBridge!"
+
+    END SWITCH
+
+UNTIL choice = 7
+
+END
 ```
 
-### `results.txt`
+---
 
-Stores student marks and quiz results.
+# 8. Flowchart
 
-Example:
+The detailed program flowchart is provided separately as:
+
+**`EduBridge_Flowchart.png`**
+
+Basic program flow:
 
 ```text
-====================================
-Student: Aarush
-Student ID: 101
-C Programming: 85/100
-Maths: 78/100
-Physics: 72/100
-Problem Solving: 88/100
-EVS: 80/100
-
------ SUBJECT QUIZ SCORES -----
-C Programming: 4/5
-Maths: 5/5
-Physics: 4/5
-Problem Solving: 5/5
-EVS: 4/5
-Total Quiz Score: 22/25
+START
+  │
+  ▼
+Initialize Program
+  │
+  ▼
+Display Main Menu
+  │
+  ▼
+Read User Choice
+  │
+  ▼
+┌───────────────────────────────┐
+│         Menu Choice           │
+└───────────────────────────────┘
+  │
+  ├── 1 → Student Registration
+  │
+  ├── 2 → View Subjects
+  │
+  ├── 3 → Enter Subject Marks
+  │
+  ├── 4 → Take All Quizzes
+  │
+  ├── 5 → Analyse Performance
+  │
+  ├── 6 → View Results
+  │
+  └── 7 → Exit
+              │
+              ▼
+         Choice = 7?
+          /       \
+        NO         YES
+        │           │
+        ▼           ▼
+    Main Menu      END
 ```
 
 ---
 
-##  Technologies Used
+# 9. C Programming Concepts Used
 
-- **Programming Language:** C
-- **Interface:** Console/Terminal
-- **Storage:** Text Files
-- **Standard Libraries:**
-  - `stdio.h`
-  - `string.h`
-  - `stdlib.h`
+| Concept | Use in Project |
+|---|---|
+| Structures | Stores student ID, name, course, and marks |
+| Arrays | Stores subjects, marks, and quiz scores |
+| Multidimensional Arrays | Stores quiz questions, options, and answers |
+| Functions | Divides the program into reusable modules |
+| `for` Loops | Processes subjects, questions, marks, and scores |
+| `while` Loop | Used for input validation |
+| `do-while` Loop | Repeats the main menu |
+| `if-else` | Validation and performance classification |
+| `switch` | Main menu and subject recommendations |
+| Strings | Stores student name, course, questions, and options |
+| File Handling | Saves registration, marks, and quiz results |
+| Pointers | Used by `strtol()` for input validation |
 
----
-
-##  Important C Concepts Used
-
-### Structures
-
-A `Student` structure stores student details and marks.
-
-```c
-struct Student
-{
-    int id;
-    char name[50];
-    char course[30];
-    int marks[SUBJECTS];
-};
-```
-
-### Functions
-
-The project is divided into multiple functions:
+### Major Functions
 
 | Function | Purpose |
 |---|---|
-| `readInt()` | Safely reads and validates integer input |
+| `readInt()` | Reads and validates integers |
 | `readLine()` | Reads text input |
-| `registration()` | Registers student details |
-| `viewSubjects()` | Displays available subjects |
-| `enterMarks()` | Records subject marks |
-| `takeQuiz()` | Conducts quizzes |
-| `analysePerformance()` | Analyses student performance |
+| `registration()` | Registers the student |
+| `viewSubjects()` | Displays subjects |
+| `enterMarks()` | Accepts and stores marks |
+| `takeQuiz()` | Conducts the quizzes |
+| `analysePerformance()` | Analyses performance |
 | `viewResult()` | Displays saved results |
-| `main()` | Controls the main menu |
+| `main()` | Controls the program |
 
 ---
 
-##  Main Menu
+# 10. Compilation and Execution
 
-When the program starts, the following menu is displayed:
+## Requirements
 
-```text
-========================================
-        EDUBRIDGE LEARNING SYSTEM
-========================================
-1. Student Registration
-2. View Subjects
-3. Enter Subject Marks
-4. Take All Subject Quizzes
-5. Analyse Performance
-6. View Results
-7. Exit
-```
-
-The user enters a number from **1 to 7** to select an operation.
-
----
-
-##  How to Compile and Run
-
-### Using GCC
-
-Compile the program:
-
-```bash
-gcc edubridge.c -o edubridge
-```
-
-Run on Linux/macOS:
-
-```bash
-./edubridge
-```
-
-Run on Windows:
-
-```bash
-edubridge.exe
-```
-
-The program can also be compiled using IDEs such as:
-
-- Code::Blocks
-- Visual Studio Code with GCC
-- Dev-C++
-- CLion
-
----
-
-##  Project Structure
-
-```text
-EduBridge-Learning-System/
-│
-├── edubridge.c
-├── README.md
-├── students.txt
-└── results.txt
-```
-
-`students.txt` and `results.txt` are automatically created when the program saves information.
-
----
-
-##  Program Workflow
-
-```text
-Start
-  ↓
-Main Menu
-  ↓
-Student Registration
-  ↓
-View Subjects
-  ↓
-Enter Marks
-  ↓
-Take Subject Quizzes
-  ↓
-Analyse Performance
-  ↓
-View Saved Results
-  ↓
-Exit
-```
-
----
-
-##  Input Validation
-
-The project uses the `readInt()` function to prevent invalid numerical input.
-
-It uses:
-
-```c
-fgets()
-strtol()
-```
-
-This prevents unexpected input from directly affecting program execution and ensures that values remain within the required range.
-
-Examples:
-
-- Menu choice → `1–7`
-- Subject marks → `0–100`
-- Quiz answer → `1–4`
-- Student ID → valid positive integer
-
----
-
-##  Future Improvements
-
-The project can be further improved by adding:
-
-- Multiple student management
-- Student login system
-- Teacher/admin login
-- Search student by ID
-- Update and delete student records
-- Ranking system
-- Grade calculation
-- More quiz questions
-- Random quiz questions
-- Separate result files for each student
-- Graphical User Interface (GUI)
-- Database integration
-
----
-
-##  Conclusion
-
-The **EduBridge Learning System** provides a simple platform for managing student academic information and evaluating performance.
-
-It combines student registration, subject marks, quizzes, performance analysis, personalised improvement suggestions and file handling in a single C application.
-
-The project demonstrates practical implementation of fundamental C programming concepts and provides a foundation that can be expanded into a more advanced student learning and performance management system.
+A C compiler such as **GCC**
